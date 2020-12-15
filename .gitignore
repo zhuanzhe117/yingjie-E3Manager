@@ -10,6 +10,7 @@
 out
 gen
 /target/
+target
 /src/test/
 *.class
 *.log
