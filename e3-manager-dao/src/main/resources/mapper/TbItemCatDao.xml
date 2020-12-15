@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lyj.e3manager.dao.TbItemCatDao">
+
+    <resultMap type="com.lyj.e3manager.entity.TbItemCat" id="TbItemCatMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="parentId" column="parent_id" jdbcType="INTEGER"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="status" column="status" jdbcType="INTEGER"/>
+        <result property="sortOrder" column="sort_order" jdbcType="INTEGER"/>
+        <result property="isParent" column="is_parent" jdbcType="INTEGER"/>
+        <result property="created" column="created" jdbcType="TIMESTAMP"/>
+        <result property="updated" column="updated" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="TbItemCatMap">
+        select
+          id, parent_id, name, status, sort_order, is_parent, created, updated
+        from e3mall.tb_item_cat
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="TbItemCatMap">
+        select
+          id, parent_id, name, status, sort_order, is_parent, created, updated
+        from e3mall.tb_item_cat
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="TbItemCatMap">
+        select
+        id, parent_id, name, status, sort_order, is_parent, created, updated
+        from e3mall.tb_item_cat
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="parentId != null">
+                and parent_id = #{parentId}
+            </if>
+            <if test="name != null and name != ''">
+                and name = #{name}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+            <if test="sortOrder != null">
+                and sort_order = #{sortOrder}
+            </if>
+            <if test="isParent != null">
+                and is_parent = #{isParent}
+            </if>
+            <if test="created != null">
+                and created = #{created}
+            </if>
+            <if test="updated != null">
+                and updated = #{updated}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into e3mall.tb_item_cat(parent_id, name, status, sort_order, is_parent, created, updated)
+        values (#{parentId}, #{name}, #{status}, #{sortOrder}, #{isParent}, #{created}, #{updated})
+    </insert>
+
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into e3mall.tb_item_cat(parent_id, name, status, sort_order, is_parent, created, updated)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.parentId}, #{entity.name}, #{entity.status}, #{entity.sortOrder}, #{entity.isParent},
+            #{entity.created}, #{entity.updated})
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into e3mall.tb_item_cat(parent_id, name, status, sort_order, is_parent, created, updated)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.parentId}, #{entity.name}, #{entity.status}, #{entity.sortOrder}, #{entity.isParent},
+            #{entity.created}, #{entity.updated})
+        </foreach>
+        on duplicate key update
+        parent_id = values(parent_id) , name = values(name) , status = values(status) , sort_order = values(sort_order)
+        , is_parent = values(is_parent) , created = values(created) , updated = values(updated)
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update e3mall.tb_item_cat
+        <set>
+            <if test="parentId != null">
+                parent_id = #{parentId},
+            </if>
+            <if test="name != null and name != ''">
+                name = #{name},
+            </if>
+            <if test="status != null">
+                status = #{status},
+            </if>
+            <if test="sortOrder != null">
+                sort_order = #{sortOrder},
+            </if>
+            <if test="isParent != null">
+                is_parent = #{isParent},
+            </if>
+            <if test="created != null">
+                created = #{created},
+            </if>
+            <if test="updated != null">
+                updated = #{updated},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from e3mall.tb_item_cat where id = #{id}
+    </delete>
+
+</mapper>
