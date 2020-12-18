@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 /**
  * 商品管理Controller
  */
-@Controller
+@RestController
 public class ItemController {
     @Autowired
     private ItemService itemService;
