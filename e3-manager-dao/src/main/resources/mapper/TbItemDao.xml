@@ -33,7 +33,7 @@
     </select>
 
     <!--通过实体作为筛选条件查询-->
-    <select id="queryAll" resultMap="TbItemMap">
+    <select id="queryAll" resultMap="TbItemMap" parameterType="com.lyj.e3manager.entity.TbItem">
         select
         id, title, sell_point, price, num, barcode, image, cid, status, created, updated
         from e3mall.tb_item

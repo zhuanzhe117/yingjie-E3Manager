@@ -1,5 +1,6 @@
 package com.lyj.e3manager.controller;
 
+import com.lyj.e3common.pojo.EasyUIDataGridResult;
 import com.lyj.e3manager.entity.TbItem;
 import com.lyj.e3manager.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,5 +23,13 @@ public class ItemController {
     public TbItem getItemById(@PathVariable int itemId){
         TbItem tbItem = itemService.getItemById(itemId);
         return tbItem;
+    }
+
+    @RequestMapping("/item/list")
+    @ResponseBody
+    public EasyUIDataGridResult getItemList(Integer page, Integer rows){
+        //调用服务查询商品列表
+        EasyUIDataGridResult result = itemService.getItemList(page, rows);
+        return result;
     }
 }

@@ -10,6 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>e3-manager-dao</artifactId>
+    <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
@@ -30,11 +31,10 @@
             <groupId>com.github.miemiedev</groupId>
             <artifactId>mybatis-paginator</artifactId>
         </dependency>
-        <!--            <dependency>-->
-        <!--                <groupId>com.github.pagehelper</groupId>-->
-        <!--                <artifactId>pagehelper</artifactId>-->
-        <!--                <version>${pagehelper.version}</version>-->
-        <!--            </dependency>-->
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper</artifactId>
+        </dependency>
         <!-- MySql -->
         <dependency>
             <groupId>mysql</groupId>
