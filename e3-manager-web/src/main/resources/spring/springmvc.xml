@@ -22,8 +22,8 @@
 <!-- 引用dubbo服务 -->
 <dubbo:application name="e3-manager-web"/>
 <dubbo:registry protocol="zookeeper" address="127.0.0.1:2181"/>
-<dubbo:reference interface="com.lyj.e3manager.service.ItemService" id="itemServiceImpl" timeout="6000"/>
-<dubbo:reference interface="com.lyj.e3manager.service.ItemCatService" id ="itemCatServiceImpl" timeout="6000"/>
+<dubbo:reference interface="com.lyj.e3manager.service.ItemService" id="itemServiceImpl" timeout="60000"/>
+<dubbo:reference interface="com.lyj.e3manager.service.ItemCatService" id ="itemCatServiceImpl" timeout="60000"/>
 
 
 </beans>
