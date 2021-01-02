@@ -15,11 +15,11 @@
   <!--通过实体作为筛选条件查询-->
   <select id="queryAll" resultMap="BaseResultMap" parameterType="com.lyj.e3manager.entity.TbItemCat">
         select
-        *
-        from e3mall.tb_item_cat
-        where parent_id=#{parentId}
+  *
+  from e3mall.tb_item_cat
+  where parent_id=#{parentId}
 
-    </select>
+</select>
 
 
   <sql id="Example_Where_Clause" >

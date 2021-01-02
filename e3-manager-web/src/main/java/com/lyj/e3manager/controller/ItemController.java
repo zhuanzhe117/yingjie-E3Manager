@@ -1,14 +1,12 @@
 package com.lyj.e3manager.controller;
 
 import com.lyj.e3common.pojo.EasyUIDataGridResult;
+import com.lyj.e3common.utils.E3Result;
 import com.lyj.e3manager.entity.TbItem;
 import com.lyj.e3manager.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * 商品管理Controller
@@ -30,6 +28,15 @@ public class ItemController {
     public EasyUIDataGridResult getItemList(Integer page, Integer rows){
         //调用服务查询商品列表
         EasyUIDataGridResult result = itemService.getItemList(page, rows);
+        return result;
+    }
+    /**
+     * 商品添加功能
+     */
+    @RequestMapping(value="/item/save", method= RequestMethod.POST)
+    @ResponseBody
+    public E3Result addItem(TbItem item, String desc) {
+        E3Result result = itemService.addItem(item, desc);
         return result;
     }
 }
