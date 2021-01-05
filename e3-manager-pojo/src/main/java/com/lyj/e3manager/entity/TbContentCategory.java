@@ -22,7 +22,7 @@ public class TbContentCategory implements Serializable {
 
     private String sortOrder;
 
-    private String isParent;
+    private boolean isParent;
 
     private Date created;
 
@@ -69,12 +69,12 @@ public class TbContentCategory implements Serializable {
         this.sortOrder = sortOrder;
     }
 
-    public String getIsParent() {
+    public boolean getIsParent() {
         return isParent;
     }
 
-    public void setIsParent(String isParent) {
-        this.isParent = isParent;
+    public void setIsParent(boolean parent) {
+        isParent = parent;
     }
 
     public Date getCreated() {
