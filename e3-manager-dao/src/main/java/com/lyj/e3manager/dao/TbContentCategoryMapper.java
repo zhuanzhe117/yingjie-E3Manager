@@ -7,7 +7,7 @@ import java.util.List;
 public interface TbContentCategoryMapper {
 
 
-    List<TbContentCategory> selectByExample(TbContentCategory tbContentCategory);
+    List<TbContentCategory> queryAll(TbContentCategory tbContentCategory);
 
 
 }

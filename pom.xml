@@ -16,7 +16,6 @@
         <module>e3-manager-web</module>
         <module>e3-common</module>
         <module>e3-portal-web</module>
-        <module>e3-content</module>
         <module>e3-content-interface</module>
         <module>e3-content-servic</module>
     </modules>
