@@ -209,12 +209,12 @@
 <!--                <artifactId>commons-fileupload</artifactId>-->
 <!--                <version>${commons-fileupload.version}</version>-->
 <!--            </dependency>-->
-<!--            &lt;!&ndash; Redis客户端 &ndash;&gt;-->
-<!--            <dependency>-->
-<!--                <groupId>redis.clients</groupId>-->
-<!--                <artifactId>jedis</artifactId>-->
-<!--                <version>${jedis.version}</version>-->
-<!--            </dependency>-->
+            <!-- Redis客户端 -->
+            <dependency>
+                <groupId>redis.clients</groupId>
+                <artifactId>jedis</artifactId>
+                <version>${jedis.version}</version>
+            </dependency>
 <!--            &lt;!&ndash; solr客户端 &ndash;&gt;-->
 <!--            <dependency>-->
 <!--                <groupId>org.apache.solr</groupId>-->

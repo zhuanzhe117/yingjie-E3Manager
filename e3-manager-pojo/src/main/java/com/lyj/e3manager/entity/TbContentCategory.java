@@ -20,7 +20,7 @@ public class TbContentCategory implements Serializable {
 
     private Integer status;
 
-    private String sortOrder;
+    private int sortOrder;
 
     private boolean isParent;
 
@@ -61,11 +61,11 @@ public class TbContentCategory implements Serializable {
         this.status = status;
     }
 
-    public String getSortOrder() {
+    public int getSortOrder() {
         return sortOrder;
     }
 
-    public void setSortOrder(String sortOrder) {
+    public void setSortOrder(int sortOrder) {
         this.sortOrder = sortOrder;
     }
 
