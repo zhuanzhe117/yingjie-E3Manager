@@ -26,6 +26,7 @@
 <dubbo:reference interface="com.lyj.e3manager.service.ItemCatService" id ="itemCatServiceImpl" timeout="60000"/>
     <dubbo:reference interface="com.lyj.e3manager.content.service.ContentCategoryService" id ="contentCategoryServiceImpl" timeout="60000"/>
     <dubbo:reference interface="com.lyj.e3manager.content.service.ContentService" id ="contentService" timeout="60000"/>
+    <dubbo:reference interface="com.lyj.e3manager.search.service.SearchItemService" id ="searchItemService" timeout="60000"/>
 
 
 </beans>

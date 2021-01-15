@@ -18,6 +18,8 @@
         <module>e3-portal-web</module>
         <module>e3-content-interface</module>
         <module>e3-content-servic</module>
+        <module>e3-search-interface</module>
+        <module>e3-search-service</module>
     </modules>
 
     <!-- 集中定义依赖版本号 -->
@@ -215,12 +217,12 @@
                 <artifactId>jedis</artifactId>
                 <version>${jedis.version}</version>
             </dependency>
-<!--            &lt;!&ndash; solr客户端 &ndash;&gt;-->
-<!--            <dependency>-->
-<!--                <groupId>org.apache.solr</groupId>-->
-<!--                <artifactId>solr-solrj</artifactId>-->
-<!--                <version>${solrj.version}</version>-->
-<!--            </dependency>-->
+            <!-- solr客户端 -->
+            <dependency>
+                <groupId>org.apache.solr</groupId>
+                <artifactId>solr-solrj</artifactId>
+                <version>${solrj.version}</version>
+            </dependency>
             <!-- dubbo相关 -->
             <dependency>
                 <groupId>com.alibaba</groupId>
