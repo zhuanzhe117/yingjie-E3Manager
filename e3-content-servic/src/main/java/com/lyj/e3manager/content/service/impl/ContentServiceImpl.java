@@ -1,22 +1,26 @@
 package com.lyj.e3manager.content.service.impl;
 
 import com.lyj.e3common.jedis.JedisClient;
+import com.lyj.e3common.jedis.JedisClientPool;
 import com.lyj.e3common.utils.E3Result;
 import com.lyj.e3manager.content.service.ContentService;
 import com.lyj.e3manager.dao.TbContentMapper;
 import com.lyj.e3manager.entity.TbContent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
 
-
+@Service
 public class ContentServiceImpl implements ContentService {
     @Autowired
     private TbContentMapper contentMapper;
+
     @Autowired
-    private JedisClient jedisClient;
+    private JedisClient jedisClientPool;
+
     @Value("${CONTENT_LIST}")
     private String CONTENT_LIST;
 

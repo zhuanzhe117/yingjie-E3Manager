@@ -5,6 +5,9 @@ import java.util.List;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 
+/**
+ * 单机
+ */
 public class JedisClientPool implements JedisClient {
 	
 	private JedisPool jedisPool;

@@ -83,12 +83,6 @@
         </dependency>
         <dependency>
             <groupId>com.lyj</groupId>
-            <artifactId>e3-manager-dao</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.lyj</groupId>
             <artifactId>e3-content-interface</artifactId>
             <version>1.0-SNAPSHOT</version>
             <scope>compile</scope>
@@ -109,8 +103,11 @@
             <artifactId>solr-solrj</artifactId>
         </dependency>
     </dependencies>
+
     <!-- 如果不添加此节点mybatis的mapper.xml文件都会被漏掉。 -->
     <build>
+        <finalName>search-service</finalName>
+        <!-- 如果不添加此节点mybatis的mapper.xml文件都会被漏掉。 -->
         <resources>
             <resource>
                 <directory>src/main/java</directory>
@@ -120,6 +117,7 @@
                 </includes>
                 <filtering>false</filtering>
             </resource>
+
             <resource>
                 <directory>src/main/resources</directory>
                 <includes>
@@ -127,6 +125,27 @@
                     <include>**/*.xml</include>
                 </includes>
                 <filtering>false</filtering>
+            </resource>
+
+            <!--jar包名称-->
+            <!--recources文件夹下的所有文件都打进jar包-->
+            <resource>
+                <targetPath>${project.build.directory}/classes</targetPath>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>**/*.xml</include>
+                    <include>**/*.properties</include>
+                </includes>
+            </resource>
+            <!-- 上文有说过，由于我的applicationContext.xml文件不是在META-INF下，这一段代码的作用就是将 applicationContext.xml文件拷贝到META-INF目录下-->
+            <resource>
+                <targetPath>${project.build.directory}/classes/META-INF/spring</targetPath>
+                <directory>src/main/resources/spring</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>*.xml</include>
+                </includes>
             </resource>
         </resources>
 
