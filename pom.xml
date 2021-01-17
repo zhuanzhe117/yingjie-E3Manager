@@ -20,6 +20,7 @@
         <module>e3-content-servic</module>
         <module>e3-search-interface</module>
         <module>e3-search-service</module>
+        <module>e3-search-web</module>
     </modules>
 
     <!-- 集中定义依赖版本号 -->
