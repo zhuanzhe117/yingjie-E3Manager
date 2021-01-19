@@ -9,7 +9,7 @@ import redis.clients.jedis.JedisPool;
  * 单机
  */
 public class JedisClientPool implements JedisClient {
-	
+
 	private JedisPool jedisPool;
 
 	public JedisPool getJedisPool() {

@@ -8,9 +8,9 @@ import redis.clients.jedis.JedisCluster;
  * 集群
  */
 public class JedisClientCluster implements JedisClient {
-	
+
 	private JedisCluster jedisCluster;
-	
+
 
 	public JedisCluster getJedisCluster() {
 		return jedisCluster;

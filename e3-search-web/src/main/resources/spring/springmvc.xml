@@ -8,7 +8,8 @@
         http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd
         http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
-
+    <!--加载配置文件-->
+<context:property-placeholder location="classpath:conf/resource.properties"/>
 <context:component-scan base-package="com.lyj.e3manager.search.controller" />
 <mvc:annotation-driven />
 <bean
@@ -16,10 +17,9 @@
     <property name="prefix" value="/WEB-INF/jsp/" />
     <property name="suffix" value=".jsp" />
 </bean>
-
 <!-- 引用dubbo服务 -->
 <dubbo:application name="e3-search-web"/>
 <dubbo:registry protocol="zookeeper" address="127.0.0.1:2181"/>
-<!--<dubbo:reference interface="com.lyj.e3manager.service.ItemService" id="itemServiceImpl" timeout="60000"/>-->
+<dubbo:reference interface="com.lyj.e3manager.search.service.SearchService" id="searchServiceImpl" timeout="60000"/>
 
 </beans>
