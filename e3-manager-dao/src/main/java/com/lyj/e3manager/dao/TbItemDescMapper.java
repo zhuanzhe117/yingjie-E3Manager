@@ -6,4 +6,6 @@ public interface TbItemDescMapper {
 
     int insert(TbItemDesc record);
 
+    TbItemDesc selectByPrimaryKey(Long itemId);
+
 }
