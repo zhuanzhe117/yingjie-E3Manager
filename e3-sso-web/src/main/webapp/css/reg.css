@@ -175,7 +175,7 @@ input::-ms-reveal{display: none;}
 .loginreg_main .loginRegForm span{ display:block;}
 .loginreg_main .loginRegForm .loginreg_title{ height:20px; line-height:20px; font-size:12px;}
 .loginreg_main .loginRegForm .loginreg_m{ width:294px; height:30px; line-height:30px;}
-.loginreg_main .regInput{ width:255px; height:30px; line-height:30px; *+height:28px; float:left; padding:0 5px; border:0 none; outline:none; background:#fff;}
+.loginreg_main .regInput{ width:255px; height:30px; line-height:30px; *+:height 28px; float:left; padding:0 5px; border:0 none; outline:none; background:#fff;}
 .loginreg_main a.forgetPassword, .loginreg_main a.enterpriseUsers{ display:block; height:30px; line-height:30px;}
 .loginreg_main a.forgetPassword{ text-align:right; color:#aaa;}
 .loginreg_main a.forgetPassword:hover{ text-decoration:underline; color:#6e9b0c;}

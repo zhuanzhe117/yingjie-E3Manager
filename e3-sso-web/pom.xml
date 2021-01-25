@@ -4,6 +4,12 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
+  <parent>
+    <artifactId>E3-Manager</artifactId>
+    <groupId>com.lyj</groupId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+
   <groupId>com.lyj</groupId>
   <artifactId>e3-sso-web</artifactId>
   <version>1.0-SNAPSHOT</version>
@@ -120,18 +126,6 @@
       <groupId>com.lyj</groupId>
       <artifactId>e3-content-interface</artifactId>
       <version>1.0-SNAPSHOT</version>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-context</artifactId>
-      <version>5.3.1</version>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-web</artifactId>
-      <version>5.3.1</version>
       <scope>compile</scope>
     </dependency>
   </dependencies>
