@@ -1,5 +1,7 @@
 package com.lyj.e3manager.sso.service;
 
-public interface RegisterService {
+import com.lyj.e3common.utils.E3Result;
 
+public interface RegisterService {
+    E3Result checkData(String param,int type);
 }
