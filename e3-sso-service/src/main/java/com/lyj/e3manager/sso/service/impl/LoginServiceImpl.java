@@ -19,7 +19,7 @@ public class LoginServiceImpl implements LoginService {
     @Autowired
     private TbUserMapper userMapper;
     @Autowired
-    JedisClient jedisClient;
+    JedisClient jedisClientPool;
     @Value("${SESSION_EXPIRE}")
     private Integer SESSION_EXPIRE;
 
@@ -46,9 +46,9 @@ public class LoginServiceImpl implements LoginService {
         String token = UUID.randomUUID().toString();
         // 4、把用户信息写入redis，key：token value：用户信息
         users.setPassword(null);
-        jedisClient.set("SESSION:" + token, JsonUtils.objectToJson(users));
+        jedisClientPool.set("SESSION:" + token, JsonUtils.objectToJson(users));
         // 5、设置Session的过期时间
-        jedisClient.expire("SESSION:" + token, SESSION_EXPIRE);
+        jedisClientPool.expire("SESSION:" + token, SESSION_EXPIRE);
         // 6、把token返回
 
         return E3Result.ok(token);

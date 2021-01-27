@@ -23,6 +23,6 @@
 <dubbo:application name="e3-sso-web"/>
 <dubbo:registry protocol="zookeeper" address="127.0.0.1:2181"/>
 <dubbo:reference interface="com.lyj.e3manager.sso.service.RegisterService" id="registerServiceImpl" timeout="60000"/>
-    <dubbo:reference interface="com.lyj.e3manager.sso.service.LoginService" id="loginServiceImpl" timeout="60000"/>
+<dubbo:reference interface="com.lyj.e3manager.sso.service.LoginService" id="loginServiceImpl" timeout="60000"/>
 
 </beans>
