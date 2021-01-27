@@ -18,6 +18,7 @@ public class RegitsterController {
 
     @RequestMapping("/page/register")
     public String RegitsterController(){
+
         return "register";
     }
     //判断用户、手机号是否注册过。做个验证
