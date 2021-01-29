@@ -25,6 +25,9 @@
         <module>e3-sso-interface</module>
         <module>e3-sso-service</module>
         <module>e3-sso-web</module>
+        <module>e3-cart-interface</module>
+        <module>e3-cart-service</module>
+        <module>e3-cart-web</module>
     </modules>
 
     <!-- 集中定义依赖版本号 -->

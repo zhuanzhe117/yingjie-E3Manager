@@ -9,21 +9,15 @@
         http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
 
-<context:component-scan base-package="com.lyj.e3manager.sso.controller" />
+<context:component-scan base-package="com.lyj.e3manager.cart.controller" />
 <mvc:annotation-driven />
-<bean
-        class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
     <property name="prefix" value="/WEB-INF/jsp/" />
     <property name="suffix" value=".jsp" />
 </bean>
-    <mvc:resources location="/css/" mapping="/css/**"/>
-    <mvc:resources location="/js/" mapping="/js/**"/>
-    <mvc:resources location="/images/" mapping="/images/**"/>
 <!-- 引用dubbo服务 -->
-<dubbo:application name="e3-sso-web"/>
+<dubbo:application name="e3-cart-web"/>
 <dubbo:registry protocol="zookeeper" address="127.0.0.1:2181"/>
-<dubbo:reference interface="com.lyj.e3manager.sso.service.RegisterService" id="registerServiceImpl" timeout="60000"/>
-<dubbo:reference interface="com.lyj.e3manager.sso.service.LoginService" id="loginServiceImpl" timeout="60000"/>
-<dubbo:reference interface="com.lyj.e3manager.sso.service.TokenService" id="tokenServiceImpl" timeout="60000"/>
+<dubbo:reference interface="com.lyj.e3manager.service.ItemService" id="itemServiceImpl" timeout="60000"/>
 
 </beans>
