@@ -40,6 +40,11 @@
       <groupId>com.lyj</groupId>
       <version>1.0-SNAPSHOT</version>
     </dependency>
+    <dependency>
+      <artifactId>e3-sso-interface</artifactId>
+      <groupId>com.lyj</groupId>
+      <version>1.0-SNAPSHOT</version>
+    </dependency>
     <!-- Spring -->
     <dependency>
       <groupId>org.springframework</groupId>

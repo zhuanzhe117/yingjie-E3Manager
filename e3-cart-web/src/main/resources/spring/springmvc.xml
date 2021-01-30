@@ -15,9 +15,19 @@
     <property name="prefix" value="/WEB-INF/jsp/" />
     <property name="suffix" value=".jsp" />
 </bean>
+<!--拦截器配置-->
+<mvc:interceptors>
+    <mvc:interceptor>
+        <mvc:mapping path="/**"/>
+        <bean class="com.lyj.e3manager.cart.interceptor.LoginInterceptor"/>
+    </mvc:interceptor>
+</mvc:interceptors>
+    
 <!-- 引用dubbo服务 -->
 <dubbo:application name="e3-cart-web"/>
 <dubbo:registry protocol="zookeeper" address="127.0.0.1:2181"/>
 <dubbo:reference interface="com.lyj.e3manager.service.ItemService" id="itemServiceImpl" timeout="60000"/>
+<dubbo:reference interface="com.lyj.e3manager.sso.service.TokenService" id="tokenServiceImpl" timeout="60000"/>
+<dubbo:reference interface="com.lyj.e3manager.cart.service.CartService" id="cartServiceImpl" timeout="60000"/>
 
 </beans>
