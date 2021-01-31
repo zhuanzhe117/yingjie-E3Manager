@@ -12,6 +12,7 @@
     <artifactId>e3-portal-web</artifactId>
     <packaging>war</packaging>
 
+
     <name>e3-portal-web Maven Webapp</name>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>

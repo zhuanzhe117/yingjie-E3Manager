@@ -82,4 +82,6 @@ public class TbOrderItem implements Serializable {
         this.picPath = picPath;
     }
 
+    public void setOrderId(String orderId) {
+    }
 }

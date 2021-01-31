@@ -113,4 +113,6 @@ public class TbOrderShipping implements Serializable {
         this.updated = updated;
     }
 
+    public void setOrderId(String orderId) {
+    }
 }

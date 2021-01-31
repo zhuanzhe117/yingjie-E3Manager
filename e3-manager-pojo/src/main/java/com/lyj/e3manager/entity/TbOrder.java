@@ -83,7 +83,7 @@ public class TbOrder implements Serializable {
         return status;
     }
 
-    public void setStatus(Date status) {
+    public void setStatus(int status) {
         this.status = status;
     }
 

@@ -27,7 +27,7 @@ public class TbUser implements Serializable {
     private Date updated;
 
 
-    public Integer getId() {
+    public long getId() {
         return id;
     }
 
