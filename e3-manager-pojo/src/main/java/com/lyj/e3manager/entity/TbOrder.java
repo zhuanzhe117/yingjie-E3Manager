@@ -20,7 +20,7 @@ public class TbOrder implements Serializable {
 
     private Date postFee;
 
-    private Date status;
+    private Integer status;
 
     private Date createTime;
 
@@ -79,7 +79,7 @@ public class TbOrder implements Serializable {
         this.postFee = postFee;
     }
 
-    public Date getStatus() {
+    public int getStatus() {
         return status;
     }
 
