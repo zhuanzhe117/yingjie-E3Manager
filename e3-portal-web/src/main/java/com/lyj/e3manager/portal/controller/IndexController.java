@@ -21,6 +21,7 @@ public class IndexController {
 
     @Autowired
     private ContentService contentService;
+
     @RequestMapping("/index")
     public String showIndex(Model model) {
         //查询内容列表
