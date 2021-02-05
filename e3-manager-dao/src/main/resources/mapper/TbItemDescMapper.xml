@@ -74,14 +74,9 @@
     item_desc
   </sql>
 
-<!--  <insert id="insert" parameterType="com.lyj.e3manager.entity.TbItemDesc" >-->
-<!--    insert into tb_item_desc (item_id, created, updated,-->
-<!--      item_desc)-->
-<!--    values (#{itemId}, #{created}, #{updated},#{itemDesc})-->
-<!--  </insert>-->
   <insert id="insert" parameterType="com.lyj.e3manager.entity.TbItemDesc" >
-    insert into tb_item_desc (item_id,item_desc)
-    values (#{itemId},#{itemDesc})
+    insert into tb_item_desc (item_id, created, updated, item_desc)
+    values (#{itemId}, #{created}, #{updated},#{itemDesc})
   </insert>
   <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Long" >
     select

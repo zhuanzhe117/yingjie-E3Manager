@@ -85,7 +85,7 @@ public class ItemServiceImpl implements ItemService {
         //补全item的属性
         item.setId(itemId);
         //1-正常，2-下架，3-删除
-        item.setStatus("1");
+        item.setStatus(1);
         item.setCreated(new Date());
         item.setUpdated(new Date());
         //向商品表插入数据

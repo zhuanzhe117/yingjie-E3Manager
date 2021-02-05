@@ -28,7 +28,7 @@ public class TbItem implements Serializable {
 
     private Integer cid;
 
-    private String status;
+    private Integer status;
 
     private Date created;
 
@@ -99,11 +99,11 @@ public class TbItem implements Serializable {
         this.cid = cid;
     }
 
-    public String getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 

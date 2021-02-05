@@ -37,47 +37,47 @@
         select
         id, title, sell_point, price, num, barcode, image, cid, status, created, updated
         from e3mall.tb_item
-        <where>
-            <if test="id != null">
-                and id = #{id}
-            </if>
-            <if test="title != null and title != ''">
-                and title = #{title}
-            </if>
-            <if test="sellPoint != null and sellPoint != ''">
-                and sell_point = #{sellPoint}
-            </if>
-            <if test="price != null">
-                and price = #{price}
-            </if>
-            <if test="num != null">
-                and num = #{num}
-            </if>
-            <if test="barcode != null and barcode != ''">
-                and barcode = #{barcode}
-            </if>
-            <if test="image != null and image != ''">
-                and image = #{image}
-            </if>
-            <if test="cid != null">
-                and cid = #{cid}
-            </if>
-            <if test="status != null and status != ''">
-                and status = #{status}
-            </if>
-            <if test="created != null">
-                and created = #{created}
-            </if>
-            <if test="updated != null">
-                and updated = #{updated}
-            </if>
-        </where>
+<!--        <where>-->
+<!--            <if test="id != null">-->
+<!--                and id = #{id}-->
+<!--            </if>-->
+<!--            <if test="title != null and title != ''">-->
+<!--                and title = #{title}-->
+<!--            </if>-->
+<!--            <if test="sellPoint != null and sellPoint != ''">-->
+<!--                and sell_point = #{sellPoint}-->
+<!--            </if>-->
+<!--            <if test="price != null">-->
+<!--                and price = #{price}-->
+<!--            </if>-->
+<!--            <if test="num != null">-->
+<!--                and num = #{num}-->
+<!--            </if>-->
+<!--            <if test="barcode != null and barcode != ''">-->
+<!--                and barcode = #{barcode}-->
+<!--            </if>-->
+<!--            <if test="image != null and image != ''">-->
+<!--                and image = #{image}-->
+<!--            </if>-->
+<!--            <if test="cid != null">-->
+<!--                and cid = #{cid}-->
+<!--            </if>-->
+<!--            <if test="status != null and status != ''">-->
+<!--                and status = #{status}-->
+<!--            </if>-->
+<!--            <if test="created != null">-->
+<!--                and created = #{created}-->
+<!--            </if>-->
+<!--            <if test="updated != null">-->
+<!--                and updated = #{updated}-->
+<!--            </if>-->
+<!--        </where>-->
     </select>
 
     <!--新增所有列-->
     <insert id="insert">
-        insert into e3mall.tb_item(title, sell_point, price, num, barcode, cid, status)
-        values (#{title}, #{sellPoint}, #{price}, #{num}, #{barcode}, #{cid}, #{status})
+        insert into e3mall.tb_item(id, title, sell_point, price, num, barcode, cid, status)
+        values (#{id}, #{title}, #{sellPoint}, #{price}, #{num}, #{barcode}, #{cid}, #{status})
     </insert>
 
     <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
