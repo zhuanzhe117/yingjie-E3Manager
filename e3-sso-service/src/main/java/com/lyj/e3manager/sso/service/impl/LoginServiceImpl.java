@@ -50,7 +50,6 @@ public class LoginServiceImpl implements LoginService {
         // 5、设置Session的过期时间
         jedisClientPool.expire("SESSION:" + token, SESSION_EXPIRE);
         // 6、把token返回
-
         return E3Result.ok(token);
     }
 }

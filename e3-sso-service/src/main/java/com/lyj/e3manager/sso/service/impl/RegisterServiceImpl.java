@@ -4,9 +4,12 @@ import com.lyj.e3common.utils.E3Result;
 import com.lyj.e3manager.dao.TbUserMapper;
 import com.lyj.e3manager.entity.TbUser;
 import com.lyj.e3manager.sso.service.RegisterService;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.DigestUtils;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -39,5 +42,33 @@ public class RegisterServiceImpl implements RegisterService {
         }
         //如果没有数据返回true
         return E3Result.ok(true);
+    }
+
+    @Override
+    public E3Result register(TbUser user) {
+        //数据有效性校验
+        if (StringUtils.isBlank(user.getUsername()) || StringUtils.isBlank(user.getPassword())
+                || StringUtils.isBlank(user.getPhone())) {
+            return E3Result.build(400, "用户数据不完整，注册失败");
+        }
+        //1：用户名 2：手机号 3：邮箱
+        E3Result result = checkData(user.getUsername(), 1);
+        if (!(boolean) result.getData()) {
+            return E3Result.build(400, "此用户名已经被占用");
+        }
+        result = checkData(user.getPhone(), 2);
+        if (!(boolean)result.getData()) {
+            return E3Result.build(400, "手机号已经被占用");
+        }
+        //补全pojo的属性
+        user.setCreated(new Date());
+        user.setUpdated(new Date());
+        //对密码进行md5加密
+        String md5Pass = DigestUtils.md5DigestAsHex(user.getPassword().getBytes());
+        user.setPassword(md5Pass);
+        //把用户数据插入到数据库中
+        userMapper.insert(user);
+        //返回添加成功
+        return E3Result.ok();
     }
 }
